@@ -1,6 +1,6 @@
 const _ = require("lodash");
 const request = require("supertest");
-const { app } = require("../../app");
+const { app } = require("../../app/app");
 
 const BUNDLE = require("../fixtures/empty-bundle.json");
 const OBSERVATION = require("../fixtures/observations/observations-ketamine.json");

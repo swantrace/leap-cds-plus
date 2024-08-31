@@ -2,7 +2,7 @@ const _ = require("lodash");
 const nock = require("nock");
 
 const request = require("supertest");
-const { app } = require("../../app");
+const { app } = require("../../app/app");
 const {
   setupMockPatient,
   setupMockConsent,
