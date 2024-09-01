@@ -13,8 +13,8 @@
   "repository": "git@github.com:mojitoholic/leap-cds.git",
   "license": "GPL-3.0-or-later",
   "scripts": {
-    "dev": "bun --watch src/server.ts",
-    "start": "bun src/server.ts",
+    "dev": "bun --watch src/app.ts",
+    "start": "bun src/app.ts",
     "test": "bunx jest --runInBand --forceExit",
     "format": "bunx prettier --write \"./**/*.js\"",
     "create-env": "bun run printenv > .env"

@@ -1,5 +1,5 @@
 const request = require("supertest");
-const { app } = require("../../app/app");
+const { app } = require("../../src/app");
 
 it("should respond to ping", async () => {
   expect.assertions(2);

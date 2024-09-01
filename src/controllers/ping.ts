@@ -1,19 +1,14 @@
-function ping(req, res) {
-  const requestedError = req.query.error;
-  if (requestedError === "bad_request") {
-    throw {
-      httpCode: 400,
-      error: "bad_request",
-      errorMessage: "Invalid request."
-    };
-  } else if (requestedError === "internal_error") {
-    throw {
-      httpCode: 500,
-      error: "internal_error",
-      errorMessage: "Internal server error."
-    };
-  }
-  res.send("");
-}
+import { createMiddleware } from "hono/factory";
 
-export { ping };
+const ping = createMiddleware(async (c) => {
+  const requestedError = c.req.query("error");
+  if (requestedError === "bad_request") {
+    throw new Error("400");
+  } else if (requestedError === "internal_error") {
+    throw new Error("500");
+  } else {
+    return c.text("pong");
+  }
+});
+
+export default ping;

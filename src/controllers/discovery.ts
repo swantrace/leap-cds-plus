@@ -1,9 +1,10 @@
+import { createMiddleware } from "hono/factory";
 import serviceDefinitions from "../schemas/service-definitions.json";
 
-function discovery(req, res) {
-  res.json({
+const discovery = createMiddleware(async (c) => {
+  return c.json({
     services: serviceDefinitions
   });
-}
+});
 
-export { discovery };
+export default discovery;
